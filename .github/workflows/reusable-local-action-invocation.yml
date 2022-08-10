@@ -10,15 +10,18 @@ on:
 
 jobs:
   example_job:
-    name: Pass input and secrets to my-action
+    name: Pass input to say-hello local action
     runs-on: ubuntu-latest
     steps:
-      # Local actions need to be checked out first
+      # Local actions need to be cloned first
       - uses: actions/checkout@v3
+        with:
+          repository: 'cross-repo-scenarios/reusable-workflows'  # without this, the executing repository will be checked out 
 
-      - run: ls -la
-
-      - run: cat ./README.md
+      - name: Check which repository we cloned
+        run: |
+          ls -la
+          cat ./README.md
 
       - uses: ./local-actions/say-hello
         with:
