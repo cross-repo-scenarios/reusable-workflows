@@ -1,0 +1,12 @@
+name: Test the reusable workflows in this repository
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-reusable-local-action:
+    uses: ./.github/workflows/reusable-local-action-invocation.yml
+    with:
+      username: mona

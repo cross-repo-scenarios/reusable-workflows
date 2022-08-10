@@ -1,5 +1,5 @@
 # Based on https://docs.github.com/en/actions/using-workflows/reusing-workflows#example-reusable-workflow
-name: Reusable workflow example
+name: Reusable workflow that runs local action
 
 on:
   workflow_call:
@@ -7,9 +7,6 @@ on:
       username:
         required: true
         type: string
-    secrets:
-      token:
-        required: true
 
 jobs:
   example_job:
@@ -18,10 +15,11 @@ jobs:
     steps:
       # Local actions need to be checked out first
       - uses: actions/checkout@v3
-      
+
+      - run: ls -la
+
       - run: cat ./README.md
-      
-      - uses: ./.github/workflows/my-action
+
+      - uses: ./local-actions/say-hello
         with:
           username: ${{ inputs.username }}
-          token: ${{ secrets.token }}
