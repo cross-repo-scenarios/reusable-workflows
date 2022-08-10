@@ -18,11 +18,6 @@ jobs:
         with:
           repository: 'cross-repo-scenarios/reusable-workflows'  # without this, the executing repository will be checked out 
 
-      - name: Check which repository we cloned
-        run: |
-          ls -la
-          cat ./README.md
-
       - uses: ./local-actions/say-hello
         with:
           username: ${{ inputs.username }}
