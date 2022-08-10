@@ -11,5 +11,12 @@ jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
+      # event and context
+      - run: cat $GITHUB_EVENT_PATH
+      - run: echo $GITHUB_EVENT_NAME
+      - name: Dump GitHub context
+        env:
+          CONTEXT: ${{ toJson(github) }}
+        run: echo "$CONTEXT"      
       - name: Print job_workflow_ref
         run: echo ${{ github.job_workflow_ref }}
