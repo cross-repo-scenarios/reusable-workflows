@@ -19,6 +19,8 @@ jobs:
       # Local actions need to be checked out first
       - uses: actions/checkout@v3
       
+      - run: cat ./README.md
+      
       - uses: ./.github/workflows/my-action
         with:
           username: ${{ inputs.username }}
