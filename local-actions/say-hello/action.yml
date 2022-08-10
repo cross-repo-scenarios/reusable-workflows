@@ -1,0 +1,11 @@
+name: 'Say Hello'
+description: 'A simple action that creates an annotation to greet you'
+runs:
+  using: 'node16'
+  main: 'index.js'
+
+inputs:
+    username:
+      description: 'Your name'
+      required: false
+      default: 'GitHub user'
