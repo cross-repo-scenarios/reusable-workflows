@@ -10,3 +10,8 @@ jobs:
     uses: ./.github/workflows/reusable-local-action-invocation.yml
     with:
       username: mona
+
+  test-dump-context:
+    uses: ./.github/workflows/reusable-dump-context.yml
+    with:
+      username: mona
