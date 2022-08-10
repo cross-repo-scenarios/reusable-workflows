@@ -1,3 +1,5 @@
+# ⚠️ Nested workflows aren't supported
+# error parsing called workflow "./.github/workflows/nested-reusable-workflow.yml": job "mona" calls workflow "./.github/workflows/reusable-local-action-invocation.yml", but doing so would exceed the limit on called workflow depth of 1
 name: Nested reusable workflow
 on:
   workflow_call:
