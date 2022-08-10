@@ -1,0 +1,14 @@
+name: Nested reusable workflow
+on:
+  workflow_call:
+
+jobs:
+  mona:
+    uses: ./.github/workflows/reusable-local-action-invocation.yml
+    with:
+      username: mona
+
+  lisa:
+    uses: ./.github/workflows/reusable-local-action-invocation.yml
+    with:
+      username: lisa
