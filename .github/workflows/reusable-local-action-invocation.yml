@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Filesystem path actions need to be cloned first
+      # This may require a PAT for internal and private repositories
       - uses: actions/checkout@v3
         with:
           repository: 'cross-repo-scenarios/reusable-workflows'  # without this, the executing repository will be checked out
